@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<extension key="org.aecea.aeceamembership" type="module">
+<extension key="ca.aecea.aeceamembership" type="module">
   <file>aeceamembership</file>
   <name>Aecea Membership Extension</name>
   <description>Extends CiviCRM -&gt; Membership</description>

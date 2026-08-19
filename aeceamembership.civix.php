@@ -8,7 +8,7 @@
    */
   class CRM_Aeceamembership_ExtensionUtil {
     const SHORT_NAME = 'aeceamembership';
-    const LONG_NAME = 'org.aecea.aeceamembership';
+    const LONG_NAME = 'ca.aecea.aeceamembership';
     const CLASS_PREFIX = 'CRM_Aeceamembership';
 
     /**
