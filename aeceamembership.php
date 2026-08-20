@@ -43,19 +43,15 @@ function aeceamembership_civicrm_enable() {
 function aeceamembership_calc_Membership($userID, $newEndDate, $contributionId, $date, $financialTypeId) {
 
   // Membership: KG Membership - Monthly (id=7)
-
-  // Membership: Monthly Membership IATS (EAC: id=30) -> Financial Type: Monthly Contributions iATS
-  // Membership: Monthly Membership (PAC) (EAC: id=9) -> Financial Type: Monthly Contributions
-
   $result = civicrm_api3('MembershipType', 'get', [
     'sequential' => 1,
-    'return' => ["name"],
+    'return' => ["frontend_title"],
     'financial_type_id' => $financialTypeId,
   ]);
   if ($result['count'] != 1 || $result['is_error'] != 0) {
     return;
   };
-  $membershipTypeName = $result['values']['0']['name'];
+  $membershipTypeName = $result['values']['0']['frontend_title'];
   $AeceaMembershipType_id = $result['values']['0']['id'];
 
   // No need to continue unless we are dealing with one of our AECEA Contribution Financial Types:

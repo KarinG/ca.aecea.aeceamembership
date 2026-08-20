@@ -12,6 +12,7 @@
 
     // Pull up all of >= yesterday's contribution of Financial Type = (see $params) that are Completed:
     // -7 days is regular interval
+    // KG: do NOT ask for 'financial_type_id' in the 'return' because it will come up empty
     $yesterday = date("Y-m-d", strtotime( '-5 days' ) );
     $resultContributions = civicrm_api3('Contribution', 'get', array(
       'sequential' => 1,
