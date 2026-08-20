@@ -37,7 +37,7 @@
       // Calculate new end date
       if (!empty($date)) {
         if ($params['financialtype'] == 'KG Payment') {
-          $c = strtotime(date("Y-m-d", strtotime($date)) . " +1 month");
+          $c = strtotime(date("Y-m-d", strtotime($date)) . " +2 month");
         // }
         // elseif ($params['financialtype'] == 'Monthly Contributions') {
         //   $c = strtotime(date("Y-m-d", strtotime($date)) . " +2 month");
