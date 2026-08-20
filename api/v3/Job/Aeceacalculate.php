@@ -54,8 +54,6 @@
 
       $createMembership = aeceamembership_calc_Membership($contactId, $newEndDate, $contributionID, $receive_date, $financialTypeId);
       $membershipId = $createMembership['id'];
-      $output[] = $singleContribution;
-      $output[] = $financialTypeId;
       $output[] = ts('Membership for contact id %1 %2 %3 %4 %5', array(1 => $contactId, 2 => $financialTypeId, 3 => $membershipId, 4 => $receive_date, 5 => $newEndDate));
       ++$counter;
     }
