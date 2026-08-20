@@ -15,7 +15,7 @@
     $yesterday = date("Y-m-d", strtotime( '-5 days' ) );
     $resultContributions = civicrm_api3('Contribution', 'get', array(
       'sequential' => 1,
-      'return' => ["contact_id", "receive_date", "financial_type_id"],
+      'return' => ["contact_id", "receive_date"],
       'financial_type_id' => array($params['financialtype']),
       'contribution_status_id' => ["Completed"],
       'receive_date' => array('>=' => $yesterday),
@@ -54,6 +54,7 @@
 
       $createMembership = aeceamembership_calc_Membership($contactId, $newEndDate, $contributionID, $receive_date, $financialTypeId);
       $membershipId = $createMembership['id'];
+      $output[] = $singleContribution;
       $output[] = $financialTypeId;
       $output[] = ts('Membership for contact id %1 %2 %3 %4 %5', array(1 => $contactId, 2 => $financialTypeId, 3 => $membershipId, 4 => $receive_date, 5 => $newEndDate));
       ++$counter;
