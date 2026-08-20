@@ -36,14 +36,11 @@
 
       // Calculate new end date
       if (!empty($date)) {
-        if ($params['financialtype'] == 'Monthly Contributions IATS') {
+        if ($params['financialtype'] == 'KG Payment') {
           $c = strtotime(date("Y-m-d", strtotime($date)) . " +1 month");
-        }
-        elseif ($params['financialtype'] == 'Monthly Contributions') {
-          $c = strtotime(date("Y-m-d", strtotime($date)) . " +2 month");
-        }
-        elseif ($params['financialtype'] == 'KG AeceaExtension') {
-          $c = strtotime(date("Y-m-d", strtotime($date)) . " +1 year");
+        // }
+        // elseif ($params['financialtype'] == 'Monthly Contributions') {
+        //   $c = strtotime(date("Y-m-d", strtotime($date)) . " +2 month");
         };
 
         $newEndDate = date("Y-m-d", $c);
